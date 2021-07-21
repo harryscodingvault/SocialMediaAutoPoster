@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import PasswordChangeForm, AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import HttpResponseRedirect
 from django.urls import reverse
@@ -52,3 +52,15 @@ def profile_change(request):
             form.save()
             form = UserProfileChange(instance=current_user)
     return render(request, 'App_Login/profile_change.html', context={'form': form})
+
+@login_required()
+def pass_change(request):
+    current_user = request.user
+    changed = False
+    form = PasswordChangeForm(current_user)
+    if request.method == 'POST':
+        form = PasswordChangeForm(current_user, data=request.POST)
+        if form.is_valid():
+            form.save()
+            changed = True
+    return render(request, 'App_Login/pass_change.html', context={'form':form, 'changed':changed})
