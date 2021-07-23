@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponseRedirect
 from django.views.generic import CreateView, UpdateView, ListView, DetailView, TemplateView, DeleteView
-from App_Blog.models import Blog
+from App_Blog.models import Blog, BlogImages
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
