@@ -17,4 +17,5 @@
     {{ blog.blog_content|linebreaks }}
     </div>
 
+    <a href="{% url 'App_Blog:edit_blog' pk=blog.pk%}" class="btn btn-info btn-sm">Edit</a>
 {% endblock %}

@@ -7,4 +7,6 @@ urlpatterns = [
     path('', views.BlogList.as_view(), name='blog_list'),
     path('write/', views.CreateBlog.as_view(), name='create_blog'),
     path('blog_details/<slug:slug>', views.BlogDetails.as_view(), name='blog_details'),
+    path('edit_blog/<pk>', views.UpdateBlog.as_view(), name='edit_blog'),
 ]
+

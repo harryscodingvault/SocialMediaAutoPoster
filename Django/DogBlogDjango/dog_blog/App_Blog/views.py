@@ -26,6 +26,14 @@ class CreateBlog(LoginRequiredMixin, CreateView):
         blog_obj.save()
         return HttpResponseRedirect(reverse('index'))
 
+class UpdateBlog(LoginRequiredMixin, UpdateView):
+    model = Blog
+    fields = ('blog_title', 'blog_content', 'blog_image')
+    template_name = 'App_Blog/edit_blog.html'
+
+    def get_success_url(self, **kwargs):
+        return reverse_lazy('App_Blog:blog_details', kwargs={'slug': self.object.slug})
+
 class BlogDetails(DetailView):
     model = Blog
     template_name = 'App_Blog/blog_details.html'
