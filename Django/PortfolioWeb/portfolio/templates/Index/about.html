@@ -6,6 +6,8 @@ About
 
 {% block content %}
 <div class="bg-light p-5 rounded-lg m-3">
-    <h1 class="text-center">About</h1>
+    <h1 class="text-center">{{ about.title }}</h1>
+    <p class="text-center">{{ about.description }}</p>
+    <img src="{{ about.image.url }}">
 </div>
 {% endblock %}
