@@ -73,7 +73,7 @@ TEMPLATES = [
         },
     },
 ]
-
+1
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 

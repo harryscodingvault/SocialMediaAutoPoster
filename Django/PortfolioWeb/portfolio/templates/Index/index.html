@@ -7,5 +7,25 @@ Portfolio
 {% block content %}
 <div class="bg-light p-5 rounded-lg m-3">
     <h1 class="text-center">Portfolio</h1>
+    <p class="text-center">{{ intro.description }}</p>
 </div>
+
+<h1>Big Projects</h1>
+{% for project in projects %}
+{% if project.is_big %}
+    <a href="{{ project.link }}"><h2 class="text-center">{{ project.title }}{{ project.size }}</h2></a>
+{% endif %}
+{% endfor %}
+
+<h1>Small Projects</h1>
+{% for project in projects %}
+{% if project.is_big == False %}
+    <a href="{{ page.link }}"><h2 class="text-center">{{ project.title }}</h2></a>
+{% endif %}
+{% endfor %}
+
+{% for page in social %}
+    <a href="{{ page.link }}"><h2 class="text-center">{{ page.site }}</h2></a>
+{% endfor %}
+
 {% endblock %}
