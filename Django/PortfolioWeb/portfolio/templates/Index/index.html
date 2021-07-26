@@ -19,13 +19,9 @@ Portfolio
 
 <h1>Small Projects</h1>
 {% for project in projects %}
-{% if project.is_big == False %}
+{% if project.is_big != True %}
     <a href="{{ page.link }}"><h2 class="text-center">{{ project.title }}</h2></a>
 {% endif %}
-{% endfor %}
-
-{% for page in social %}
-    <a href="{{ page.link }}"><h2 class="text-center">{{ page.site }}</h2></a>
 {% endfor %}
 
 {% endblock %}
