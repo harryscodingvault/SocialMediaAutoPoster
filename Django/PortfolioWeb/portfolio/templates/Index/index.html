@@ -10,18 +10,76 @@ Portfolio
     <p class="text-center">{{ intro.description }}</p>
 </div>
 
-<h1>Big Projects</h1>
-{% for project in projects %}
-{% if project.is_big %}
-    <a href="{{ project.link }}"><h2 class="text-center">{{ project.title }}{{ project.size }}</h2></a>
-{% endif %}
-{% endfor %}
 
 <h1>Small Projects</h1>
+<div class="box">
+    <div class="container">
+     	<div class="row">
 {% for project in projects %}
 {% if project.is_big != True %}
-    <a href="{{ page.link }}"><h2 class="text-center">{{ project.title }}</h2></a>
+			    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >
+                    <a href="{{ project.link }}">
+						{% if project.image %}
+							<div class="box-part text-center" style="background-image: url({{ project.image.url }});">
+						{% else %}
+							<div class="box-part text-center" style="background-image: url(/media/gears_pic.jpeg);">
+						{% endif %}
+						<div class="text-box">
+						<div class="title">
+							<h4>{{ project.title }}</h4>
+						</div>
+						</div>
+						<div class="text-box">
+						<div class="text">
+							<span>{{ project.description }}</span>
+						</div>
+						</div>
+
+					 </div>
+                    </a>
+				</div>
+
 {% endif %}
 {% endfor %}
+		</div>
+		</div>
+    </div>
+
+
+
+<h1 class="text-center">Big Projects</h1>
+
+<div class="box">
+    <div class="container">
+     	<div class="row">
+{% for project in projects %}
+{% if project.is_big %}
+			    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >
+                    <a href="{{ project.link }}">
+						{% if project.image %}
+							<div class="box-part text-center" style="background-image: url({{ project.image.url }});">
+						{% else %}
+							<div class="box-part text-center" style="background-image: url(/media/gears_pic.jpeg);">
+						{% endif %}
+						<div class="text-box">
+						<div class="title">
+							<h4>{{ project.title }}</h4>
+						</div>
+						</div>
+						<div class="text-box">
+						<div class="text">
+							<span>{{ project.description }}</span>
+						</div>
+						</div>
+
+					 </div>
+                    </a>
+				</div>
+
+{% endif %}
+{% endfor %}
+				</div>
+		</div>
+    </div>
 
 {% endblock %}

@@ -1,15 +1,50 @@
 *{
+    margin: 0px;
+    padding: 0px;
     font-family: 'Ubuntu', sans-serif;
+
 }
 
 body {
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
   overflow-y: scroll;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  background: #F0F8FF;
 }
 
 body::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
+}
+
+
+a{
+      text-decoration: none;
+      color: inherit;
+}
+
+/* Card */
+
+.box{
+
+}
+
+.box-part{
+    border: 2px solid black;
+    background:#FFF;
+    border-radius: 10px 10px 10px 10px;
+    padding:50px 10px;
+    margin:10px 0px;
+}
+.text{
+    margin:0px 0px;
+    padding: 10px;
+}
+.text-box{
+    color: white;
+    background-color:black;
+    border-radius: 10px;
 }
 
 
