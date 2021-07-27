@@ -1,17 +1,60 @@
 {% extends 'layouts.html' %}
 
 {% block title %}
-Portfolio
+	Portfolio
 {% endblock %}
 
 {% block content %}
-<div class="bg-light p-5 rounded-lg m-3">
-    <h1 class="text-center">Portfolio</h1>
-    <p class="text-center">{{ intro.description }}</p>
+<div class="container text-center">
+	<div class="title-presentation p-4 m-2">
+		<h1 class="text-center">{{ intro.title }}</h1>
+		<p class="text-center">{{ intro.description }}</p>
+	</div>
+</div>
+<div class="container text-center">
+	<div class="p-1 m-5 separator-title">
+		<h1 class="text-center">Big Projects</h1>
+	</div>
 </div>
 
+<div class="box">
+    <div class="container">
+     	<div class="row">
 
-<h1>Small Projects</h1>
+{% for project in projects %}
+{% if project.is_big %}
+			    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >
+                    <a href="{{ project.link }}">
+						{% if project.image %}
+							<div class="box-part text-center" style="background-image: url({{ project.image.url }});">
+						{% else %}
+							<div class="box-part text-center" style="background-image: url(/media/gears_pic.jpeg);">
+						{% endif %}
+						<div class="text-box">
+						<div class="title">
+							<h2>{{ project.title }}</h2>
+						</div>
+						</div>
+						<div class="text-box">
+						<div class="text">
+							<p>{{ project.description }}</p>
+						</div>
+						</div>
+
+					 </div>
+                    </a>
+				</div>
+
+{% endif %}
+{% endfor %}
+				</div>
+		</div>
+    </div>
+<div class="container text-center">
+	<div class="p-1 m-5 separator-title">
+		<h1 class="text-center">Small Projects</h1>
+	</div>
+</div>
 <div class="box">
     <div class="container">
      	<div class="row">
@@ -26,12 +69,12 @@ Portfolio
 						{% endif %}
 						<div class="text-box">
 						<div class="title">
-							<h4>{{ project.title }}</h4>
+							<h2>{{ project.title }}</h2>
 						</div>
 						</div>
 						<div class="text-box">
 						<div class="text">
-							<span>{{ project.description }}</span>
+							<p>{{ project.description }}</p>
 						</div>
 						</div>
 
@@ -42,33 +85,68 @@ Portfolio
 {% endif %}
 {% endfor %}
 		</div>
-		</div>
-    </div>
-
-
-
-<h1 class="text-center">Big Projects</h1>
-
-<div class="box">
+	</div>
+</div>
+<div class="container text-center">
+	<div class="p-1 m-5 separator-title">
+		<h1 class="text-center">Stuff I know: </h1>
+	</div>
+</div>
+  <div class="box">
     <div class="container">
      	<div class="row">
-{% for project in projects %}
-{% if project.is_big %}
+
 			    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >
                     <a href="{{ project.link }}">
-						{% if project.image %}
-							<div class="box-part text-center" style="background-image: url({{ project.image.url }});">
-						{% else %}
-							<div class="box-part text-center" style="background-image: url(/media/gears_pic.jpeg);">
-						{% endif %}
+                        <div class="box-part text-center" style="background-image: url(/media/gears_pic.jpeg);">
 						<div class="text-box">
 						<div class="title">
-							<h4>{{ project.title }}</h4>
+							<h1>Languages: </h1>
 						</div>
 						</div>
 						<div class="text-box">
 						<div class="text">
-							<span>{{ project.description }}</span>
+                           {% for skill in skills %}
+                                <p>{{ skill.language }}</p>
+                            {% endfor %}
+						</div>
+						</div>
+
+					 </div>
+                    </a>
+				</div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >
+                    <a href="{{ project.link }}">
+                        <div class="box-part text-center" style="background-image: url(/media/gears_pic.jpeg);">
+						<div class="text-box">
+						<div class="title">
+							<h1>Frameworks: </h1>
+						</div>
+						</div>
+						<div class="text-box">
+						<div class="text">
+                           {% for skill in skills %}
+                                <p>{{ skill.framework }}</p>
+                            {% endfor %}
+						</div>
+						</div>
+
+					 </div>
+                    </a>
+				</div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >
+                    <a href="{{ project.link }}">
+                        <div class="box-part text-center" style="background-image: url(/media/gears_pic.jpeg);">
+						<div class="text-box">
+						<div class="title">
+							<h1>Technologies: </h1>
+						</div>
+						</div>
+						<div class="text-box">
+						<div class="text">
+                           {% for skill in skills %}
+                                <p>{{ skill.technology }}</p>
+                            {% endfor %}
 						</div>
 						</div>
 
@@ -76,10 +154,8 @@ Portfolio
                     </a>
 				</div>
 
-{% endif %}
-{% endfor %}
-				</div>
 		</div>
     </div>
 
+</div>
 {% endblock %}
