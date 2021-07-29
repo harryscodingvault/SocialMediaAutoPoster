@@ -5,8 +5,8 @@ Contacts
 {% endblock %}
 
 {% block content %}
-    <div class="container text-center">
-        <div class="title-presentation p-3 m-1">
+    <div class="container container-contact text-center">
+        <div class="title-presentation p-4">
         <form action="" method="post">
             {% csrf_token %}
           <div class="form-group m-1">
@@ -22,7 +22,7 @@ Contacts
             <textarea  type="text" class="form-control" id="message" name="message" placeholder="Enter Message"></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary m-1">Submit</button>
+          <button type="submit" class="btn m-3">Submit</button>
         </form>
         </div>
     </div>
