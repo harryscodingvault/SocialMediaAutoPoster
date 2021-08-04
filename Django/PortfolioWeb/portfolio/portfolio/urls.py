@@ -18,9 +18,17 @@ from django.urls import path, include
 
 from django.conf.urls.static import static
 from django.conf import settings
+from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+    path('381-4lae-wqeask23-gfafn/', admin.site.urls),
     path('', include('Index.urls')),
     path('contact/', include('Contact.urls')),
+    path('404', views.error_404_view),
+    path('500', views.error_500_view),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'portfolio.views.error_404_view'
+handler500 = 'portfolio.views.error_500_view'
+

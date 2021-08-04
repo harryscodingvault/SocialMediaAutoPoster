@@ -2,7 +2,6 @@
     margin: 0px;
     padding: 0px;
     font-family: 'Roboto Mono', monospace;
-
 }
 
 body {
@@ -12,7 +11,7 @@ body {
   margin-top: 80px;
   margin-bottom: 80px;
   background-color: #005e9c;
-  background-image: url('../images/fabric-of-squares.png');
+  background-image: url("../images/shattered.png");
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
@@ -28,6 +27,12 @@ header, footer{
 p{
   font-size: 18px;
   font-weight: normal;
+}
+
+img{
+    margin-top: 3em;
+    width: 25em;
+    border: 2px solid #035397;
 }
 
 /* Intro text*/
@@ -54,6 +59,7 @@ a{
     color: white;
 }
 
+
 /* Tile presentation */
 .title-presentation{
     color: white;
@@ -72,23 +78,32 @@ a{
 
 /* Card */
 
-
 .box-part{
     border: 2px solid black;
     background:#FFF;
-    border-radius: 10px 10px 10px 10px;
-    padding:50px 10px;
-    margin:10px 0px;
+    border-radius: 10px;
+    padding:30px 2px;
+    margin:5px 0px 5px 0px;
 }
-.text{
-    margin:0px 0px;
-    padding: 10px;
-}
-.text-box{
+
+.text-box .title{
     color: white;
     background-color:#171717;
-    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
+    padding: 5px;
 }
+
+.text-box .text{
+    color: white;
+    background-color:#171717;
+    border-radius: 0px 0px 10px 10px;
+    padding: 5px;
+}
+
+.text{
+    margin:0px 0px;
+}
+
 
 /* Titles */
 @media only screen  and (min-width: 768px){
