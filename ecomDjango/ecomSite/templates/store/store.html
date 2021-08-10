@@ -18,7 +18,7 @@
             <hr>
     {% for item in products %}
         <div>
-            <h2>{{ item.product_name }}</h2>
+            <a href="{{ item.get_url }}"><h2>{{ item.product_name }}</h2></a>
             <h3>$ {{ item.price }}</h3>
             <img style="width:70px;" src="{{ item.images.url }}">
             <a href="">Add to Cart</a>

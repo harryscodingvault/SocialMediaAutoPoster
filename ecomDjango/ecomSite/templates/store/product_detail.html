@@ -5,13 +5,14 @@
 
 
 {% block content %}
-        <h1>Products: </h1>
-
-        <hr>
-    {% for item in products %}
-        <h2>{{ item.product_name }}</h2>
-        <h3>$ {{ item.price }}</h3>
-        <img style="width:70px;" src="{{ item.images.url }}">
-    {% endfor %}
+<h1>{{ selected_product.product_name }}</h1>
+<h2>{{ selected_product.description }}</h2>
+<h2>$ {{ selected_product.price }}</h2>
+    {% if selected_product.stock <= 0 %}
+        <h1>Out of stock</h1>
+    {% else %}
+        <a href="">Add to Cart</a>
+    {% endif %}
+<img src="{{ selected_product.images.url }}" />
 {% endblock %}
 
