@@ -8,7 +8,8 @@ Home
 
 {% block content %}
         <h1>Products: </h1>
-    <hr>
+
+        <hr>
     {% for item in products %}
         <h2>{{ item.product_name }}</h2>
         <h3>$ {{ item.price }}</h3>
