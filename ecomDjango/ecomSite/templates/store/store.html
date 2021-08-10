@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}
+    Store Page
+{% endblock %}
+
+
+{% block content %}
+        <h1>Store Page: </h1>
+        <h3>{{ product_count }} items found </h3>
+    <hr>
+    {% for item in products %}
+        <div>
+            <h2>{{ item.product_name }}</h2>
+            <h3>$ {{ item.price }}</h3>
+            <img style="width:70px;" src="{{ item.images.url }}">
+            <a href="">Add to Cart</a>
+        </div>
+    {% endfor %}
+{% endblock %}
