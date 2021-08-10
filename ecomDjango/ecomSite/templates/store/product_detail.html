@@ -11,7 +11,7 @@
     {% if selected_product.stock <= 0 %}
         <h1>Out of stock</h1>
     {% else %}
-        <a href="">Add to Cart</a>
+        <a href="{% url 'add_to_cart' selected_product.id %}">Add to Cart</a>
     {% endif %}
 <img src="{{ selected_product.images.url }}" />
 {% endblock %}
