@@ -13,6 +13,6 @@
     {% else %}
         <a href="{% url 'add_to_cart' selected_product.id %}">Add to Cart</a>
     {% endif %}
-<img src="{{ selected_product.images.url }}" />
+<img width="100px;" src="{{ selected_product.images.url }}" />
 {% endblock %}
 

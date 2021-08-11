@@ -5,5 +5,18 @@
 
 
 {% block content %}
-Cart
+    {% for item in cart_items %}
+        <h2>{{ item.product.product_name }}</h2>
+        <img style="width: 100px;" src="{{ item.product.images.url }}"/>
+
+        <h2>{{ item.quantity }}</h2>
+        <a href="{% url 'add_to_cart' item.product.id %}"><button>Add</button></a>
+        <a href="{% url 'remove_cart' item.product.id %}"><button>Remove Item</button></a>
+        <a href="{% url 'remove_cart_item' item.product.id %}"><button>Remove Item from cart</button></a>
+        <h2>$ {{ item.sub_total }}</h2>
+    {% endfor %}
+        <h1>Total: $ {{total}}</h1>
+        <h1>Quantity: {{quantity}}</h1>
+        <h1>Tax:  $ {{tax}}</h1>
+        <h1>Total Cost: $ {{grand_total}}</h1>
 {% endblock %}
