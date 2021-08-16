@@ -4,6 +4,8 @@
     <a href="{% url 'cart'%}"><h2>Cart</h2></a>
     <h2>Items in cart: {{cart_count}}</h2>
     <a href="{% url 'store'%}"><h2>All Products</h2></a>
+    <a href="{% url 'login'%}"><h2>Login </h2></a>
+    <a href="{% url 'register'%}"><h2>Register</h2></a>
     {% for category in links %}
         <a href="{{ category.get_url }}"><h2>{{category.category_name}}</h2></a>
     {% endfor %}
