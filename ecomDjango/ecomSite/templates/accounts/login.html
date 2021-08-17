@@ -7,8 +7,22 @@
 
 
 {% block content %}
+    {% include 'base/alerts.html' %}
         <h1>Login: </h1>
+        {% if request.GET.command == 'verification' %}
+            Thanks for registering, please verify email.
+            <h3><a href="{% url 'login' %}">Already verified?</a></h3>
+        {% else %}
+            <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+                <input type="email" placeholder="Enter Email" name="email">
+                 <input type="password" placeholder="Enter password" name="password">
+                 <a href="{% url 'forgotPassword' %}">forgot password?</a>
+                <button type="submit">Subtmit</button>
+            </form>
 
+            <a href="{% url 'login' %}">Not account, Register!</a>
+        {% endif %}
 
 {% endblock %}
 
