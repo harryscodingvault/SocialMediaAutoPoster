@@ -11,8 +11,8 @@
 
         <h2>{{ item.quantity }}</h2>
         <a href="{% url 'add_to_cart' item.product.id %}"><button>Add</button></a>
-        <a href="{% url 'remove_cart' item.product.id %}"><button>Remove Item</button></a>
-        <a href="{% url 'remove_cart_item' item.product.id %}"><button>Remove Item from cart</button></a>
+        <a href="{% url 'reduce_cart' item.product.id  item.id %}"><button>Remove Item</button></a>
+        <a href="{% url 'remove_cart_item' item.product.id item.id %}"><button>Remove Item from cart</button></a>
         <h2>$ {{ item.sub_total }}</h2>
     {% endfor %}
         <h1>Total: $ {{total}}</h1>
