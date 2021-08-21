@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}
+    Order Completed
+{% endblock %}
+
+
+{% block content %}
+        <h1>Order completed, thanks :) </h1>
+        <h2>{{order.name}}</h2>
+        <h2>{{order.address}}</h2>
+        <h2>{{order.city}}, {{order.state}}</h2>
+        <h2>{{order.zipcode}}</h2>
+
+        <hr>
+        <h2>Order #{{ order_number }}</h2>
+        <h2>Transaction ID {{ transID }}</h2>
+        <h2>Order date: {{ order.created_at }}</h2>
+        <h2>Status: {{ payment.status }}</h2>
+
+        {% for item in ordered_products %}
+            <h3>Product: {{ item.product.product_name }}</h3>
+            <h3>Quantity: {{ item.quantity }}}</h3>
+            <h3>Price: ${{ item.product_price}}}</h3>
+        {% endfor %}
+            <h3>Subtotal: ${{ subtotal }}}</h3>
+            <h3>Tax: ${{ order.tax}}}</h3>
+            <h3>Tax: ${{ order.order_total}}}</h3>
+
+
+{% endblock %}
+
