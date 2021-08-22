@@ -2,21 +2,24 @@
 {% load static %}
 
 {% block title %}
-    My orders
+    Order Detail
 {% endblock %}
 
 
 {% block content %}
-    {% include 'accounts/dashboard_sidebar.html' %}
-        {% for order in orders %}
-            <a href="{% url 'order_detail' order.order_number%}">
+    {% include 'base/alerts.html' %}
+            <h4>User : {{ order.name }}</h4>
+            <h4>Address : {{ order.address }}</h4>
             <h4>order : #{{ order.order_number }}</h4>
             <h4>Tota: {{ order.order_total }}</h4>
             <h4>Phone: {{ order.phone }}</h4>
             <h4>Created: {{ order.created_at }}</h4>
-            </a>
+            <h4>Subtotal: ${{ subtotal }}</h4>
+            <h4>Tax: {{ order.tax }}</h4>
+            <h4>Total: {{ order.order_total }}</h4>
+
+
             <hr>
-        {% endfor %}
 
 {% endblock %}
 
