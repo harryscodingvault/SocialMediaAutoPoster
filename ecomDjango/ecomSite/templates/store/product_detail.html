@@ -8,11 +8,15 @@
 <h1>{{ selected_product.product_name }}</h1>
 <h2>{{ selected_product.description }}</h2>
 <h2>$ {{ selected_product.price }}</h2>
+
+<img width="100px;" src="{{ selected_product.images.url }}" />
+{% for image in product_gallery %}
+    <a href="{{ image.image.url }}"><img width="100px;" src="{{ image.image.url }}" /></a>
+{% endfor %}
     {% if selected_product.stock <= 0 %}
         <h1>Out of stock</h1>
     {% else %}
         <a href="{% url 'add_to_cart' selected_product.id %}">Add to Cart</a>
     {% endif %}
-<img width="100px;" src="{{ selected_product.images.url }}" />
 {% endblock %}
 
