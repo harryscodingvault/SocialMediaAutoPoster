@@ -7,7 +7,11 @@
 
 
 {% block content %}
-    {% include 'base/alerts.html' %}
+    {% include 'accounts/dashboard_sidebar.html' %}
+    <h2>Logged in as {{user.username}}</h2>
+    <h2>Total orders: {{orders_count}}</h2>
+    <h2>Email: {{user.email}}</h2>
+    <h2>Phone: {{user.phone_number}}</h2>
 
 {% endblock %}
 

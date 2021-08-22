@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}
+    My orders
+{% endblock %}
+
+
+{% block content %}
+    {% include 'accounts/dashboard_sidebar.html' %}
+        {% for order in orders %}
+            <h4>order : #{{ order.order_number }}</h4>
+            <h4>Tota: {{ order.order_total }}</h4>
+            <h4>Phone: {{ order.phone }}</h4>
+            <h4>Created: {{ order.created_at }}</h4>
+            <hr>
+        {% endfor %}
+
+{% endblock %}
+
