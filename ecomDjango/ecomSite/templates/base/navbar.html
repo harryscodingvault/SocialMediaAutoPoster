@@ -1,19 +1,51 @@
+{% load static %}
+<header>
+    <nav class="navbar navbar-expand-lg navbar-expand-sm navbar-light">
 
-<nav>
-    <h1>This is the navbar</h1>
-    <a href="{% url 'cart'%}"><h2>Cart</h2></a>
-    <a href="{% url 'dashboard'%}"><h2>Dashboard</h2></a>
-    <h2>Items in cart: {{cart_count}}</h2>
-    <a href="{% url 'store'%}"><h2>All Products</h2></a>
-    {% if user.id is None %}
-    <a href="{% url 'login'%}"><h2>Sign In </h2></a>
-    <a href="{% url 'register'%}"><h2>Register</h2></a>
-    {% else %}
-    <h2>Wecome {{user.username}}</h2>
-    <a href="{% url 'logout'%}"><h2>Logout</h2></a>
-    {% endif %}
-    {% for category in links %}
-        <a href="{{ category.get_url }}"><h2>{{category.category_name}}</h2></a>
-    {% endfor %}
-    <hr>
-</nav>
+        <a href="{% url 'home' %}" class="navbar-brand">
+            <img src="{% static 'images/car_icon.png'%}" alt="company logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+             <img src="{% static 'images/burger_icon.png'%}" alt="burger icon">
+        </button>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="navbar-nav mx-auto ">
+                <li class="nav-link mx-2">
+                    <a class="nav-link nav-active" href="{% url 'store'%}">All Products</a>
+                </li>
+                <li class="nav-link  mx-2">
+                    <a class="nav-link" href="{% url 'dashboard'%}">Dashboard</a>
+                </li>
+
+                <li class="nav-link  mx-2">
+                    <a class="nav-link" href="{% url 'cart'%}">Cart: {{cart_count}}</a>
+                </li>
+
+                {% if user.id is None %}
+                <li class="nav-link  mx-2">
+                    <a class="nav-link" href="{% url 'login'%}">Login</a>
+                </li>
+                <li class="nav-link  mx-2">
+                    <a class="nav-link" href="{% url 'register'%}">Register</a>
+                </li>
+                {% else %}
+                <li class="nav-link  mx-2">
+                    <a class="nav-link" href="{% url 'logout'%}">Logout</a>
+                </li>
+                {% endif %}
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-icons d-none d-lg-flex">
+
+            <a class="navbar-icon mx-2 navbar-cart-icon" href="{% url 'cart'%}">
+                <img src="{% static 'images/cart_plus.png'%}" alt="cart">
+                <div class="cart-items">
+                   {{cart_count}}
+                </div>
+
+            </a>
+        </div>
+
+    </nav>
+</header>

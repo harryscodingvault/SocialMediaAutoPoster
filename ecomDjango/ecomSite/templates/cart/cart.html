@@ -4,7 +4,10 @@
 {% block title %}Cart{% endblock %}
 
 
+
+
 {% block content %}
+
     {% for item in cart_items %}
         <h2>{{ item.product.product_name }}</h2>
         <img style="width: 100px;" src="{{ item.product.images.url }}"/>
