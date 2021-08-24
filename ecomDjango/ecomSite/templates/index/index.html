@@ -6,41 +6,50 @@ Home
 {% endblock %}
 
 
+{% block banner %}
+		<div class="banner d-flex align-items-center pl-3 pl-lg-5">
+			<div>
+				<h1 class="text-capitalize text-slanted mb-0">Minimalist</h1>
+				<h1 class="text-uppercas font-weight-bold">Interior style</h1>
+				<a href="{% url 'store' %}" class="btn btn-yellow">View Collections</a>
+			</div>
+		</div>
+{% endblock %}
+
 {% block content %}
 
-    <div class="container container-separator text-center">
-		<h1 class="text-separator" >Products</h1>
-    </div>
-        <hr>
-<div class="box">
-    <div class="container">
-     	<div class="row">
-
+<section class="featured py-5">
+		<div class="container">
+			<div class="row my-3">
+				<div class="col-10 mx-auto text-center">
+					<h1 class="text-uppercase">Feature prod</h1>
+				</div>
+			</div>
+			<div class="row">
 {% for item in products %}
+				<div class="col-10 mx-auto col-md-6 col-lg-4">
+					<div class="featured-container p-5">
+						<img
+							src="{{ item.images.url }}"
+							class="img-fluid"
+							alt="product"
+						/>
+						<h6 class="product-name text-capitalize text-center my-2">{{ item.product_name }}</h6>
+						<h6 class="product-price text-center">
+							<span>$ {{ item.price }}</span>
+						</h6>
+						<a href="{% url 'add_to_cart' item.id %}" class="featured-store-link text-capitalize">
+							Add to cart
+						</a>
 
-			    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >
-
-
-							<div class="box-part text-center" style="background-image: url({{ item.images.url }});">
-                            <img style="width:70px;" src="{{ item.images.url }}">
-						<div class="text-box">
-						<div class="title">
-							<h2>{{ item.product_name }}</h2>
-						</div>
-						</div>
-						<div class="text-box">
-						<div class="text">
-							<p>$ {{ item.price }}</p>
-						</div>
-						</div>
-
-					 </div>
+					</div>
 
 				</div>
-
 {% endfor %}
-				</div>
+</div>
 		</div>
-    </div>
+	</section>
+
+
 {% endblock %}
 

@@ -15,25 +15,34 @@ body {
 .text-slanted {
   font-family: 'Roboto Mono', monospace;
 }
-
+.btn-yellow{
+    background: var(--mainYellow);
+    text-transform: capitalize:
+    font-size: 1.2rem;
+    color: var(--mainBlack);
+    border-radius: 0 !important;
+}
+.btn-yellow:hover{
+    background: var(--mainBlack);
+    color: var(--mainYellow);
+}
+a {
+  text-decoration: none;
+}
 /* HomePage */
 /* navbar */
 .navbar-toggler {
     outline: none !important;
     border: none;
     font-size: 2.2rem;
-
 }
-
 .nav-link{
     font-size: 1.6rem;
     border-bottom: 0.1rem solid var(--mainWhite);
 }
-
 .nav-active {
     border-bottom: 0.1rem solid var(--mainYellow);
 }
-
 .navbar-icon {
     font-size: 1.6rem;
 }
@@ -53,5 +62,49 @@ body {
     background: var(--mainYellow);
     font-size:1.2rem;
     border-radius:50%;
+}
+
+/* banner */
+.banner{
+    min-height: 25vh;
+    background: url("/static/images/dash-cam.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Products */
+.featured-container {
+    background: var(--TransGrey);
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-store-link{
+    background: var(--mainYellow);
+    color: var(--mainBlack);
+    padding: 0.2rem 0.4rem;
+    display: flex;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+.featured-store-link:hover{
+    background: var(--mainBlack);
+    color: var(--mainYellow);
+}
+.product-name{
+    background: var(--mainWhite);
+    color: var(--mainBlack);
+    padding: 0.2rem 0.4rem;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+.product-price{
+    background: var(--mainWhite);
+    color: var(--mainBlack);
+    padding: 0.2rem 0.4rem;
+    justify-content: center;
+    font-size: 1.4rem;
 
 }
