@@ -8,21 +8,37 @@
 
 {% block content %}
     {% include 'base/alerts.html' %}
-        <h1>Login: </h1>
-        {% if request.GET.command == 'verification' %}
-            Thanks for registering, please verify email.
-            <h3><a href="{% url 'login' %}">Already verified?</a></h3>
-        {% else %}
-            <form action="{% url 'login' %}" method="post">
-                {% csrf_token %}
-                <input type="email" placeholder="Enter Email" name="email">
-                 <input type="password" placeholder="Enter password" name="password">
-                 <a href="{% url 'forgotPassword' %}">forgot password?</a>
-                <button type="submit">Subtmit</button>
-            </form>
+    <section class="input-form py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mx-auto text-center">
+                    <h2 class="text-uppercase">Login: </h2>
+                    {% if request.GET.command == 'verification' %}
+                        <h2>Thanks for registering, please verify email. </h2>
+                        <h3><a href="{% url 'login' %}">Already verified?</a></h3>
+                    {% else %}
+                    <form action="{% url 'login' %}" method="post">
+                         {% csrf_token %}
+                        <div class="container mt-5 col-md-6" >
+                            <input type="email" class="form-control text-capitalize mb-3"
+                                placeholder="Enter Email" name="email">
+                            <input type="password" class="form-control text-capitalize mb-3"
+                                placeholder="Enter password" name="password">
 
-            <a href="{% url 'login' %}">Not account, Register!</a>
-        {% endif %}
+                        </div>
+                        <button type="submit" class="btn btn-yellow mb-3">
+                            Submit
+                        </button>
+                    </form>
+                    <a href="{% url 'login' %}">Don't have an account?, create one </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% endif %}
+
+
 
 {% endblock %}
 
