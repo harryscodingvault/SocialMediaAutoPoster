@@ -24,6 +24,7 @@ Home
 {% for item in products %}
 				<div class="col-10 mx-auto col-md-6 col-lg-4 ">
 					<div class="featured-container  text-center">
+                        <a href="{{ item.get_url }}">
 						<img
 							src="{{ item.images.url }}"
 							class="product-image img-fluid"
@@ -33,6 +34,7 @@ Home
 						<h6 class="product-price text-center">
 							<span>$ {{ item.price }}</span>
 						</h6>
+                        </a>
 						<a href="{% url 'add_to_cart' item.id %}" class="featured-store-link text-capitalize">
 							Add to cart
 						</a>

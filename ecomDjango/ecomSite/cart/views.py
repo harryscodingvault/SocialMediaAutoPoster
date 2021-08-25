@@ -29,7 +29,7 @@ def add_to_cart(request, product_id):
                 user = current_user,
             )
             cart_item.save()
-        return redirect('store')
+        return redirect('cart')
     else:
         try:
             cart = Cart.objects.get(cart_id=_cart_id(request))
@@ -50,7 +50,7 @@ def add_to_cart(request, product_id):
                 cart=cart,
             )
             cart_item.save()
-        return redirect('store')
+        return redirect('cart')
 
 
 def reduce_cart(request, product_id, cart_item_id):

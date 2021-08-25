@@ -7,26 +7,110 @@
 
 
 {% block content %}
-        <h1>Order completed, thanks :) </h1>
-        <h2>{{order.name}}</h2>
-        <h2>{{order.address}}</h2>
-        <h2>{{order.city}}, {{order.state}}</h2>
-        <h2>{{order.zipcode}}</h2>
 
-        <hr>
-        <h2>Order #{{ order_number }}</h2>
-        <h2>Transaction ID {{ transID }}</h2>
-        <h2>Order date: {{ order.created_at }}</h2>
-        <h2>Status: {{ payment.status }}</h2>
 
-        {% for item in ordered_products %}
-            <h3>Product: {{ item.product.product_name }}</h3>
-            <h3>Quantity: {{ item.quantity }}}</h3>
-            <h3>Price: ${{ item.product_price}}}</h3>
-        {% endfor %}
-            <h3>Subtotal: ${{ subtotal }}}</h3>
-            <h3>Tax: ${{ order.tax}}}</h3>
-            <h3>Tax: ${{ order.order_total}}}</h3>
+
+<section class="totals pt-1">
+    <div class="container-fluid ">
+        <div class="row text-center justify-content-center">
+            <div class="col text-center text-uppercase justify-content-center">
+        <div class="row">
+                    <div class="col-12 mx-auto my-3 col-sm-12 col-md-6 col-lg-4">
+                        <div class="card card-body cart-total text-uppercase">
+                            <div class="card-title text-white m-4">
+                                <h1>receipt</h1>
+                            </div>
+                            <div class="row text-white">
+                                <div class="col-6"><h4>Name:</h4></div>
+                                <div class="col-6"><h3>{{order.name}}</h3></div>
+                            </div>
+                            <div class="row text-white">
+                                <div class="col-6"><h4>Address:</h4></div>
+                                <div class="col-6"><h3>{{order.address}}</h3></div>
+                            </div>
+                            <div class="row text-white">
+                                <div class="col-6"><h4>Email:</h4></div>
+                                <div class="col-6"><h3>{{order.email}}</h3></div>
+                            </div>
+                            <div class="row text-white">
+                                <div class="col-6"><h4>Phone:</h4></div>
+                                <div class="col-6"><h3>{{order.phone}}</h3></div>
+                            </div>
+                            <div class="row text-white">
+                                <div class="col-6"><h4>Zipcode:</h4></div>
+                                <div class="col-6"><h3>{{order.zipcode}}</h3></div>
+                            </div>
+                            <div class="row text-white">
+                                <div class="col-6"><h4>City:</h4></div>
+                                <div class="col-6"><h3>{{order.city}}</h3></div>
+                            </div>
+                            <div class="row text-white">
+                                <div class="col-6"><h4>State:</h4></div>
+                                <div class="col-6"><h3>{{order.state}}</h3></div>
+                            </div>
+
+                            {% if order.order_note %}
+                            <div class="row text-white">
+                                <div class="col-6"><h3>Note: {{order.order_note}}</h3></div>
+                            </div>
+                            {% endif %}
+
+                            <div class="row text-white">
+                                <div class="col-6 mt-5"><h4>subtotal:</h4></div>
+                                <div class="col-6 mt-5"><h3>${{subtotal}}</h3></div>
+                            </div>
+                            <div class="row text-white">
+                                <div class="col-6"><h4>tax:</h4></div>
+                                <div class="col-6"><h3>${{order.tax}}</h3></div>
+                            </div>
+                            <div class="row row-total">
+                                <div class="col-6  my-4"><h4>Order total:</h4></div>
+                                <div class="col-6  my-4"><h3>${{order.order_total}}</h3></div>
+                            </div>
+
+                            <div class="row row-total">
+                                <div class="col-6 mt-3"><h4>Order:</h4></div>
+                                <div class="col-6 mt-3"><h3>#{{ order_number }}</h3></div>
+                            </div>
+                            <div class="row row-total">
+                                <div class="col-6"><h4>Transaction ID:</h4></div>
+                                <div class="col-6"><h3>{{ transID }}</h3></div>
+                            </div>
+                            <div class="row row-total">
+                                <div class="col-6"><h4>Order date: </h4></div>
+                                <div class="col-6"><h3>{{ order.created_at }}</h3></div>
+                            </div>
+                            <div class="row row-total">
+                                <div class="col-6"><h4>Status:</h4></div>
+                                <div class="col-6"><h3>{{ payment.status }}</h3></div>
+                            </div>
+                            {% for item in ordered_products %}
+                            <hr class="text-white">
+                            <div class="row text-white">
+                                <div class="col-6"><h4>Product:</h4></div>
+                                <div class="col-6"><h3>{{ item.product.product_name }}</h3></div>
+                            </div>
+                            <div class="row text-white">
+                                <div class="col-6"><h4>Quantity:</h4></div>
+                                <div class="col-6"><h3>{{ item.quantity }}</h3></div>
+                            </div>
+                            <div class="row text-white">
+                                <div class="col-6"><h4>Price:</h4></div>
+                                <div class="col-6"><h3>${{ item.product_price}}</h3></div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        <div class="row my-3">
+				<div class="col-10 mx-auto text-center">
+					<h1 class="text-uppercase">Order completed, thanks for shopping :)</h1>
+				</div>
+        </div>
 
 
 {% endblock %}

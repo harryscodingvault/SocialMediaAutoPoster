@@ -5,34 +5,76 @@
 
 
 {% block content %}
-        <h3>Name: {{order.name}}</h3>
-        <h3>Address: {{order.adress}}</h3>
-        <h3>Zipcode: {{order.zipcode}}</h3>
-        <h3>City: {{order.city}}</h3>
-        <h3>State: {{order.state}}</h3>
-        <h3>Phone: {{order.phone}}</h3>
-        <h3>Email: {{order.email}}</h3>
-        {% if order.order_note %}
-            <h3>Note: {{order.order_note}}</h3>
-        {% endif %}
+<section class="totals pt-1">
+    <div class="container-fluid ">
+        <div class="row text-center justify-content-center">
+            <div class="col text-center text-uppercase justify-content-center">
+        <div class="row">
+                    <div class="col-12 mx-auto my-3 col-sm-12 col-md-6 col-lg-4">
+                        <div class="card card-body cart-total text-uppercase">
+                            <div class="card-title text-white">
+                                <h1>cart total</h1>
+                            </div>
+                            <div class="row text-white">
+                                <div class="col-6"><h4>Name:</h4></div>
+                                <div class="col-6"><h3>{{order.name}}</h3></div>
+                            </div>
+                            <div class="row text-white">
+                                <div class="col-6"><h4>Address:</h4></div>
+                                <div class="col-6"><h3>{{order.address}}</h3></div>
+                            </div>
+                            <div class="row text-white">
+                                <div class="col-6"><h4>Email:</h4></div>
+                                <div class="col-6"><h3>{{order.email}}</h3></div>
+                            </div>
+                            <div class="row text-white">
+                                <div class="col-6"><h4>Phone:</h4></div>
+                                <div class="col-6"><h3>{{order.phone}}</h3></div>
+                            </div>
+                            <div class="row text-white">
+                                <div class="col-6"><h4>Zipcode:</h4></div>
+                                <div class="col-6"><h3>{{order.zipcode}}</h3></div>
+                            </div>
+                            <div class="row text-white">
+                                <div class="col-6"><h4>City:</h4></div>
+                                <div class="col-6"><h3>{{order.city}}</h3></div>
+                            </div>
+                            <div class="row text-white">
+                                <div class="col-6"><h4>State:</h4></div>
+                                <div class="col-6"><h3>{{order.state}}</h3></div>
+                            </div>
 
-         <div id="paypal-button-container"></div>
+                            {% if order.order_note %}
+                            <div class="row text-white">
+                                <div class="col-6"><h3>Note: {{order.order_note}}</h3></div>
+                            </div>
+                            {% endif %}
 
-        <hr>
-{% for item in cart_items %}
-        <h2>{{ item.product.product_name }}</h2>
-        <img style="width: 100px;" src="{{ item.product.images.url }}"/>
+                            <div class="row text-white">
+                                <div class="col-6 mt-5"><h4>subtotal</h4></div>
+                                <div class="col-6 mt-5"><h3>${{total}}</h3></div>
+                            </div>
+                            <div class="row text-white">
+                                <div class="col-6"><h4>tax</h4></div>
+                                <div class="col-6"><h3>${{tax}}</h3></div>
+                            </div>
 
-        <h2>{{ item.quantity }}</h2>
-        <a href="{% url 'add_to_cart' item.product.id %}"><button>Add</button></a>
-        <a href="{% url 'reduce_cart' item.product.id item.id %}"><button>Remove Item</button></a>
-        <a href="{% url 'remove_cart_item' item.product.id item.id %}"><button>Remove Item from cart</button></a>
-        <h2>$ {{ item.sub_total }}</h2>
-    {% endfor %}
-        <h1>Total: $ {{total}}</h1>
-        <h1>Quantity: {{quantity}}</h1>
-        <h1>Tax:  $ {{tax}}</h1>
-        <h1>Total Cost: $ {{grand_total}}</h1>
+                            <div class="row row-total">
+                                <div class="col-6  my-4"><h4>Order total</h4></div>
+                                <div class="col-6  my-4"><h3>${{grand_total}}</h3></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  <div class="row">
+                    <div class="col col-sm-6 col-md-4 mx-auto justify-content-center flex-wrap">
+                        <div id="paypal-button-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
 
