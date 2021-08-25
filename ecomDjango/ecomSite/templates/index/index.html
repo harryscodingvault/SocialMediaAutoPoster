@@ -7,11 +7,11 @@ Home
 
 
 {% block banner %}
-		<div class="banner d-flex align-items-center pl-3 pl-lg-5">
+		<div class="banner d-flex align-items-center justify-content-center pl-3 pl-lg-5 text-center">
 			<div>
-				<h1 class="text-capitalize text-slanted mb-0">Minimalist</h1>
-				<h1 class="text-uppercas font-weight-bold">Interior style</h1>
-				<a href="{% url 'store' %}" class="btn btn-yellow">View Collections</a>
+				<h1 class="text-capitalize text-yellow text-slanted ">Looking for car electronics and gadgets? </h1>
+				<h1 class="text-capitalize text-yellow text-slanted ">We install them </h1>
+				<a href="{% url 'store' %}" class="btn btn-yellow m-3">View All Products</a>
 			</div>
 		</div>
 {% endblock %}
@@ -20,15 +20,10 @@ Home
 
 <section class="featured py-5">
 		<div class="container">
-			<div class="row my-3">
-				<div class="col-10 mx-auto text-center">
-					<h1 class="text-uppercase">Feature prod</h1>
-				</div>
-			</div>
 			<div class="row">
 {% for item in products %}
-				<div class="col-10 mx-auto col-md-6 col-lg-4">
-					<div class="featured-container p-5">
+				<div class="col-10 mx-auto col-md-6 col-lg-4 ">
+					<div class="featured-container  text-center">
 						<img
 							src="{{ item.images.url }}"
 							class="product-image img-fluid"
@@ -46,7 +41,7 @@ Home
 
 				</div>
 {% endfor %}
-</div>
+			</div>
 		</div>
 	</section>
 

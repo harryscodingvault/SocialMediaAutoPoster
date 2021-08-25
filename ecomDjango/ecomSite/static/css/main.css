@@ -15,12 +15,16 @@ body {
 .text-slanted {
   font-family: 'Roboto Mono', monospace;
 }
+.text-yellow{
+    color: var(--mainYellow);
+}
 .btn-yellow{
     background: var(--mainYellow);
     text-transform: capitalize:
     font-size: 1.2rem;
     color: var(--mainBlack);
     border-radius: 0 !important;
+    font-weight: 900;
 }
 .btn-yellow:hover{
     background: var(--mainBlack);
@@ -28,6 +32,14 @@ body {
 }
 a {
   text-decoration: none;
+}
+.banner-products {
+    min-height: 25vh;
+    background: linear-gradient(
+        rgba(255,255,255,0.4),
+        rgba(255,255,255,0.4)
+        ),
+        url("/static/images/dash-cam.jpg");
 }
 /* HomePage */
 /* navbar */
@@ -66,25 +78,32 @@ a {
 
 /* banner */
 .banner{
-    min-height: 25vh;
+    min-height: 40vh;
     background: url("/static/images/dash-cam.jpg");
     background-position: center;
-    background-size: cover;
     background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-color: #000000;
+    background-image: url("/static/images/cubes.png");
 }
 
 /* Products */
 .featured-container {
-    background: var(--TransGrey);
+    background: var(--mainWhite);
     position: relative;
     overflow: hidden;
     border-radius: 1%;
-    margin: 0.3rem;
-    box-shadow: 1px 1px var(--mainBlack);
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.12),
+              0 2px 2px rgba(0,0,0,0.12),
+              0 4px 4px rgba(0,0,0,0.12),
+              0 8px 8px rgba(0,0,0,0.12),
+              0 16px 16px rgba(0,0,0,0.12);
 }
 .product-image{
-    width: 20rem;
+    height:  20rem;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
 }
 .featured-store-link{
     background: var(--mainYellow);
@@ -104,16 +123,35 @@ a {
     padding: 0.2rem 0.4rem;
     justify-content: center;
     font-size: 1.4rem;
+
 }
 .product-price{
     background: var(--mainWhite);
     color: var(--mainBlack);
     padding: 0.2rem 0.4rem;
     justify-content: center;
+    font-weight: 900;
     font-size: 1.4rem;
 }
 
-/* Login */
-.input-form{
-
+/* Busin Info */
+.skills {
+    background: var(--mainBlack);
 }
+
+/* Footer */
+.footer{
+    background: rgba(0,0,0,0.8);
+}
+.footer-title{
+    border: 0.2rem solid var(--mainYellow);
+    padding: 0.4rem;
+}
+.footer-icon {
+    color: var(--mainYellow);
+}
+.footer-icon:hover {
+    color: var(--mainWhite);
+}
+
+/* Category */
