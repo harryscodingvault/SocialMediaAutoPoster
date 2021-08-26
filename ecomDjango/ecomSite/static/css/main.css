@@ -97,7 +97,6 @@ a {
 /* banner */
 .banner{
     min-height: 40vh;
-    background: url("/static/images/dash-cam.jpg");
     background-position: center;
     background-attachment: fixed;
     background-color: #000000;
@@ -155,6 +154,10 @@ a {
 /* Busin Info */
 .skills {
     background: var(--mainBlack);
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #000000;
+    background-image: url("/static/images/cubes.png");
 }
 
 /* Footer */

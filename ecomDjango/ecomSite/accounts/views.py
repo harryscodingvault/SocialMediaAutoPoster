@@ -18,7 +18,6 @@ from django.core.mail import EmailMessage
 import requests
 
 
-
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)

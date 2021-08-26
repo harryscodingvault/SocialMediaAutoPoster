@@ -2,8 +2,8 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-expand-sm navbar-light">
 
-        <a href="{% url 'home' %}" class="navbar-brand">
-            <img src="{% static 'images/car_icon.png'%}" alt="company logo">
+        <a href="{% url 'home' %}" class="navbar-brand mx-3">
+            <img class="" src="{% static 'images/car_icon.png'%}" alt="company logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
              <img src="{% static 'images/burger_icon.png'%}" alt="burger icon">
@@ -36,12 +36,11 @@
                 </li>
             </ul>
         </div>
-        <div class="navbar-icons d-none d-lg-flex">
-
-            <a class="navbar-icon mx-2 navbar-cart-icon" href="{% url 'cart'%}">
+        <div class="navbar-icons d-none d-lg-flex  mx-3">
+            <a class="navbar-icon mx-2 navbar-cart-icon " href="{% url 'cart'%}">
                 <img src="{% static 'images/cart_plus.png'%}" alt="cart">
                 <div class="cart-items">
-                   {{cart_count}}
+                    {{cart_count}}
                 </div>
 
             </a>

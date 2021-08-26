@@ -8,22 +8,25 @@
 {% block content %}
 
 <section class="totals pt-5">
-    <div class="container-fluid">
-        <div class="row text-center justify-content-center">
-            <div class="col text-center text-uppercase justify-content-center">
+    <div class="container">
+        <div class="row text-center ">
+            <div class="col text-center text-uppercase ">
                 <div class="row align-items-center">
+
                  {% for item in cart_items %}
-                <div class="col-10 mx-auto col-md-2 m-2">
+                <div class="col-10 mx-auto col-md-4 m-2">
                     <img class="img-fluid product-image" src="{{ item.product.images.url }}"/>
                 </div>
-                <div class="col-10 mx-auto col-md-4 m-2">
+                <div class="col-10 mx-auto col-md-2 m-2">
                     <h2>{{ item.product.product_name }}</h2>
                 </div>
 
                 <div class="col-10 mx-auto col-md-2 ">
-                    <a href="{% url 'reduce_cart' item.product.id  item.id %}"><span class="btn btn-black m-1">-</span></a>
-                    <span class="btn btn-black mx-1">{{ item.quantity }}</span>
-                    <a href="{% url 'add_to_cart' item.product.id %}"><span class="btn btn-black m-1">+</span></a>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <a class="btn btn-black mx-1" href="{% url 'reduce_cart' item.product.id  item.id %}">-</a>
+                        <span class="btn btn-black mx-1">{{ item.quantity }}</span>
+                        <a class="btn btn-black mx-1" href="{% url 'add_to_cart' item.product.id %}">+</a>
+                    </div>
                 </div>
                 <div class="col-10 mx-auto col-md-2 m-2">
                     <h3>Unit cost: ${{ item.product.price }}</h3>
