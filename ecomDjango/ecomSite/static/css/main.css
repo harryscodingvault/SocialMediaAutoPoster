@@ -195,3 +195,16 @@ a {
 .cart-total{
     background:  var(--mainBlack);
 }
+
+/* Dashboard */
+.dashboard-data{
+     border: 0.2rem solid var(--mainBlack);
+}
+.dashboard-data-click{
+     border: 0.2rem solid var(--mainBlack);
+     color: var(--mainBlack);
+}
+.dashboard-data-click:hover{
+     border: 0.2rem solid var(--mainYellow);
+     color: var(--mainYellow);
+}

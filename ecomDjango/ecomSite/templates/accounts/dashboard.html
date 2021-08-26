@@ -8,10 +8,19 @@
 
 {% block content %}
     {% include 'accounts/dashboard_sidebar.html' %}
-    <h2>Logged in as {{user.username}}</h2>
-    <h2>Total orders: {{orders_count}}</h2>
-    <h2>Email: {{user.email}}</h2>
-    <h2>Phone: {{user.phone_number}}</h2>
+
+<section class=" py-3 ">
+    <div class="container">
+        <div class="row mx-1">
+                <div class="mx-auto col-lg-8  m-5 px-lg-5 dashboard-data">
+                    <h2>Logged in as: {{user.username}}</h2>
+                    <h2>Total orders: {{orders_count}}</h2>
+                    <h2>Email: {{user.email}}</h2>
+                    <h2>Phone: {{user.phone_number}}</h2>
+                </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
 

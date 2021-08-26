@@ -201,7 +201,6 @@ def my_orders(request):
 @login_required(login_url='login')
 def edit_profile(request):
     userprofile = get_object_or_404(UserProfile, user=request.user)
-    print('userprofile: ', userprofile )
 
     if request.method == 'POST':
         user_form = UserForm(request.POST, instance=request.user)

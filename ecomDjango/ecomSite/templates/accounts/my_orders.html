@@ -8,15 +8,24 @@
 
 {% block content %}
     {% include 'accounts/dashboard_sidebar.html' %}
-        {% for order in orders %}
-            <a href="{% url 'order_detail' order.order_number%}">
-            <h4>order : #{{ order.order_number }}</h4>
-            <h4>Tota: {{ order.order_total }}</h4>
-            <h4>Phone: {{ order.phone }}</h4>
-            <h4>Created: {{ order.created_at }}</h4>
+
+<section class=" py-5 ">
+    <div class="container">
+        <div class="row ">
+            {% for order in orders %}
+            <a class="" href="{% url 'order_detail' order.order_number%}">
+                <div class="mx-auto col-lg-8 m-2 p-2 px-lg-5 dashboard-data-click">
+                    <h4>Order: #{{ order.order_number }}</h4>
+                    <h4>Total: ${{ order.order_total }}</h4>
+                    <h4>Email: {{user.email}}</h4>
+                    <h4>Phone: {{ order.phone }}</h4>
+                    <h4>Created: {{ order.created_at }}</h4>
+                </div>
             </a>
-            <hr>
-        {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
 {% endblock %}
 
