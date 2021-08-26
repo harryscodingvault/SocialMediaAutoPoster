@@ -14,21 +14,21 @@
                     <form action="{% url 'place_order' %}" method="post">
                          {% csrf_token %}
                         <div class="container mt-5 col-md-6" >
-                            <input type="text" class="form-control text-capitalize mb-3"
+                            <input type="text" class="form-control mb-3"
                                 placeholder="Enter Name" name="name" required>
-                            <input type="email" class="form-control text-capitalize mb-3"
+                            <input type="email" class="form-control mb-3"
                                 placeholder="Enter Email" name="email" required>
-                            <input type="text" class="form-control text-capitalize mb-3"
+                            <input type="number" class="form-control  mb-3"
                                 placeholder="Enter phone" name="phone" required>
-                            <input type="text" class="form-control text-capitalize mb-3"
+                            <input type="text" class="form-control  mb-3"
                                 placeholder="Enter address" name="address" required>
-                            <input type="text" class="form-control text-capitalize mb-3"
+                            <input type="text" class="form-control  mb-3"
                                 placeholder="Enter zipcode" name="zipcode" required>
-                            <input type="text" class="form-control text-capitalize mb-3"
+                            <input type="text" class="form-control  mb-3"
                                 placeholder="Enter city" name="city" required>
-                            <input type="text" class="form-control text-capitalize mb-3"
+                            <input type="text" class="form-control  mb-3"
                                 placeholder="Enter state" name="state" required>
-                            <textarea class="form-control text-capitalize mb-3" name="note" placeholder="Notes"></textarea>
+                            <textarea class="form-control  mb-3" name="note" placeholder="Notes"></textarea>
                         </div>
                         <button type="submit" class="btn btn-yellow mb-3">
                             Place order
