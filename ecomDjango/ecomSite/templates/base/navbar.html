@@ -11,26 +11,26 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="navbar-nav mx-auto ">
                 <li class="nav-link mx-2">
-                    <a class="nav-link nav-active" href="{% url 'store'%}">All Products</a>
+                    <a class="nav-link {% if '/store/' in request.path %}nav-active{% endif %}" href="{% url 'store'%}">All Products</a>
                 </li>
                 <li class="nav-link  mx-2">
                     <a class="nav-link {% if '/dashboard/' in request.path %} nav-active {% endif %}" href="{% url 'dashboard'%}">Dashboard</a>
                 </li>
 
                 <li class="nav-link  mx-2">
-                    <a class="nav-link" href="{% url 'cart'%}">Cart: {{cart_count}}</a>
+                    <a class="nav-link {% if '/cart/' in request.path %} nav-active {% endif %}" href="{% url 'cart'%}">Cart: {{cart_count}}</a>
                 </li>
 
                 {% if user.id is None %}
                 <li class="nav-link  mx-2">
-                    <a class="nav-link" href="{% url 'login'%}">Login</a>
+                    <a class="nav-link {% if '/login/' in request.path %} nav-active {% endif %}" href="{% url 'login'%}">Login</a>
                 </li>
                 <li class="nav-link  mx-2">
-                    <a class="nav-link" href="{% url 'register'%}">Register</a>
+                    <a class="nav-link {% if '/register/' in request.path %} nav-active {% endif %}" href="{% url 'register'%}">Register</a>
                 </li>
                 {% else %}
                 <li class="nav-link  mx-2">
-                    <a class="nav-link" href="{% url 'logout'%}">Logout</a>
+                    <a class="nav-link {% if '/logout/' in request.path %} nav-active {% endif %}" href="{% url 'logout'%}">Logout</a>
                 </li>
                 {% endif %}
                 </li>
