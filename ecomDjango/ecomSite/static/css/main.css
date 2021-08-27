@@ -211,3 +211,12 @@ a {
      border: 0.2rem solid var(--mainYellow);
      color: var(--mainYellow);
 }
+
+/* About */
+.banner-about{
+    min-height: 60vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #000000;
+    background-image: url("/static/images/cubes.png");
+}

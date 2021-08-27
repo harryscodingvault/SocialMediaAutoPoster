@@ -1,0 +1,44 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}
+    Contact Us
+{% endblock %}
+
+
+{% block content %}
+    {% include 'base/alerts.html' %}
+
+    <section class="input-form py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mx-auto text-center">
+                    <h2 class="text-uppercase">Contact: </h2>
+                    <form action="{% url 'contact' %}" method="post">
+                         {% csrf_token %}
+                        <div class="container mt-5 col-md-6" >
+                            <input type="text" class="form-control mb-3"
+                                placeholder="Enter Name" name="name" required>
+                            <input type="email" class="form-control mb-3"
+                                placeholder="Enter Email" name="email" required>
+                            <input type="text" class="form-control mb-3"
+                                placeholder="Enter Subject" name="subject" required>
+                            <textarea class="form-control mb-3"
+                                placeholder="Enter Message" name="message" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-yellow mb-3">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+{% endblock %}
+

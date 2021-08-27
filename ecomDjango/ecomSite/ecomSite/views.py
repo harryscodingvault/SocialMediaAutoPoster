@@ -8,3 +8,5 @@ def home(request):
     }
 
     return render(request, 'index/index.html', context=context)
+
+

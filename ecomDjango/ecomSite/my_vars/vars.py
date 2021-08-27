@@ -6,3 +6,5 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'potatoalertdepartment@gmail.com'
 EMAIL_HOST_PASSWORD = 'W35#%ew%#@^@23284'
 EMAIL_USE_TLS = True
+
+EMAIL_TO = 'potatoalertdepartment@gmail.com'

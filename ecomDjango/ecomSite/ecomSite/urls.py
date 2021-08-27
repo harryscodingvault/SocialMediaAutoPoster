@@ -23,6 +23,8 @@ urlpatterns = [
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path('342-dssr-2321-5453-fgdrt-4535-23cx/', admin.site.urls),
     path('', views.home, name='home'),
+
+    path('contact/', include('contact.urls')),
     path('store/', include('store.urls')),
     path('cart/', include('cart.urls')),
     path('accounts/', include('accounts.urls')),
