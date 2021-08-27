@@ -10,8 +10,8 @@
     <div class="container">
         <div class="row">
             <div class="col-10 mx-auto col-lg-4 text-center my-5">
-                <div class="single-product-img-container">
-                    <img class="img-fluid"
+                <div class="single-product-img-container mainImage">
+                    <img class="img-fluid product-image"
                          src="{{ selected_product.images.url }}"
                          alt="{{ selected_product.product_name }}"
                     />
@@ -19,7 +19,7 @@
                 <div class="row single-product-photos mt-3">
                         {% for image in product_gallery %}
                         <div class="col-2 col-sm-2 single-product-photo p-1">
-                            <a href="{{ image.image.url }}">
+                            <a href="{{ image.image.url }}" target="mainImage">
                                 <img src="{{ image.image.url }}"
                                      class="img-fluid"
                                      alt="{{ selected_product.product_name }}"
@@ -46,7 +46,15 @@
     </div>
 </section>
 
-
-
 {% endblock %}
 
+{% block scripts %}
+<script>
+    $(document).ready(function(){
+        $('.single-product-photos a').hover(function(e){
+        e.preventDefault;
+        $('.mainImage img').attr('src', $(this).attr("href"));
+        })
+        })
+</script>
+{% endblock %}
