@@ -1,0 +1,113 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto Mono', monospace;
+
+}
+
+body {
+  background-color: #F4FAFF;
+}
+
+/* icon top */
+.icon-top{
+    background-color: #125E8A;
+}
+
+.icon-top a{
+    margin: 2rem;
+    color: #FFFFFF;
+    font-size: 2rem;
+}
+.icon-top a:hover{
+    color: #FF9F1C;
+}
+
+/* Header */
+header{
+    background-color: #125E8A;
+     color: #FFFFFF;
+}
+.navbar{
+    padding: 1rem;
+    height: 4rem;
+    font-weight: 700;
+    background-color: #39A0ED;
+}
+
+.navbar-brand{
+     color: #FFFFFF;
+     background-color: #39A0ED;
+
+}
+.nav-link:hover{
+     margin: 0.1rem;
+     text-decoration: underline;
+}
+.nav-link-active{
+    margin: 0.1rem;
+    text-decoration: underline;
+}
+.navbar-background{
+    color: red;
+}
+
+/* Intro title */
+.who-container{
+    padding-top: 5rem;
+    min-height: 25vh;
+}
+
+/* Big Projects */
+
+.title-proj-section{
+    border: 0.3rem solid #FFFFFF;
+    padding: 0.6rem;
+    font-weight: bold;;
+}
+
+.big-projects{
+    color: #FFFFFF;
+    background: #197BBD;
+    padding-top: 6rem;
+    clip-path: polygon(0 7vh, 100% 0, 100% 100%, 0% 100% );
+    margin-bottom: 5rem;
+    padding-bottom: 3rem;
+}
+
+.card{
+    color: #0C090D;
+    border: none;
+    position: relative;
+    border-radius: 1%;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.card-footer{
+    background: #197BBD;
+    color: #FFFFFF;
+}
+.proj-frm {
+    padding: 0.4rem;
+    margin: 0.1rem;
+    font-weight: 900;
+    color: #FFFFFF;
+}
+
+/* Small Projects*/
+.small-projects{
+    color: #0C090D;
+    margin-bottom: 5rem;
+    padding-bottom: 3rem;
+}
+.title-proj-section-small{
+    border: 0.3rem solid #0C090D;
+    padding: 0.6rem;
+    font-weight: bold;;
+}
+
+
+footer{
+    color: #FFFFFF;
+    background-color: #125E8A;
+
+}
