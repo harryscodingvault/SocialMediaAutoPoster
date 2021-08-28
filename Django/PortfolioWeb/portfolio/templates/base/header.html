@@ -1,4 +1,7 @@
-  <div class="container-fluid icon-top py-2 px-3">
+
+
+<header class="">
+    <div class="container-fluid icon-top py-2 px-3">
           <div class="row">
               <div class="col">
                   <div class="top-icons text-center">
@@ -10,18 +13,16 @@
               </div>
           </div>
       </div>
-
-<header class="header">
       <nav class="navbar navbar-expand navbar-dark">
-        <div class="container justify-content-center" style="height:20px;">
+        <div class="container justify-content-center text-center text-uppercase">
             <ul class="navbar-nav ">
-                <li class="nav-link">
-                    <a class="navbar-brand" href="/">Home</a>
+                <li class="nav-link {% if  request.path == '/' %} nav-link-active {% endif %}">
+                    <a class="navbar-brand" href="/">Projects</a>
                 </li>
-                <li class="nav-link">
+                <li class="nav-link {% if '/about/' in request.path %} nav-link-active {% endif %}">
                     <a class="navbar-brand" href="{% url 'about' %}">About</a>
                 </li>
-                <li class="nav-link">
+                <li class="nav-link {% if '/contact/' in request.path %} nav-link-active {% endif %}">
                     <a class="navbar-brand" href="{% url 'contact' %}">Contact</a>
                 </li>
             </ul>
