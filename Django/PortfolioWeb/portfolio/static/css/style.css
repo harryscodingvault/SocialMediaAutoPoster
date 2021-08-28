@@ -95,14 +95,36 @@ header{
 
 /* Small Projects*/
 .small-projects{
-    color: #0C090D;
+    color: #197BBD;
     margin-bottom: 5rem;
     padding-bottom: 3rem;
 }
 .title-proj-section-small{
-    border: 0.3rem solid #0C090D;
+    border: 0.3rem solid #197BBD;
     padding: 0.6rem;
     font-weight: bold;;
+}
+
+/* Contact Form */
+.contact-form .form-control{
+    background:transparent;
+    border: none;
+    border-bottom: 0.1rem solid #125E8A;
+    border-radius: 0;
+}
+.form-control::placeholder{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.contact-form button{
+    margin-top: 3rem;
+   background: #FF9F1C;
+   color: #FFFFFF;
+   font-weight: 900;
+}
+.contact-form button:hover{
+   background: #0C090D;
+   color: #FFFFFF;
 }
 
 
