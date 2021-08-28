@@ -5,11 +5,23 @@ About
 {% endblock %}
 
 {% block content %}
-    <div class="container container-about text-center">
-        <div class="title-presentation p-4">
-            <h4 class=" -4">{{ about.description }}</h4>
-        </div>
-    </div>
+	<section class="about py-5 m-5 container-about">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 mx-auto text-center">
+					<h1>{{ about.title }}</h1>
+					<p>{{ about.description }}</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+
     <div class="container container-separator text-center">
             <h1 class="text-separator">Stuff I know: </h1>
     </div>

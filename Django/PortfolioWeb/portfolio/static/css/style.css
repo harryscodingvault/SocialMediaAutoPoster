@@ -64,12 +64,16 @@ header{
     padding-top: 5rem;
     padding-bottom:2rem;
     min-height: 25vh;
-    font-weight: bold;
     color: #197BBD;
+
 }
 .container-intro h1 {
     padding: 0.7rem;
+    font-weight: 900;
     border: 0.3rem solid #197BBD;
+}
+.container-intro p {
+    font-weight: 900;
 }
 
 /* Big Projects */
@@ -112,7 +116,6 @@ header{
 .proj-frm {
     padding: 0.4rem;
     margin: 0.1rem;
-    font-weight: 900;
     color: #FFFFFF;
 }
 
@@ -121,6 +124,7 @@ header{
 }
 .text-container h1{
     margin: 1rem;
+    font-weight: 900;
 }
 .text-container p{
     margin: 0.5rem;
@@ -159,6 +163,22 @@ header{
 .contact-form button:hover{
    background: #0C090D;
    color: #FFFFFF;
+}
+/* About */
+.container-about{
+    padding-top: 5rem;
+    padding-bottom:2rem;
+    color: #197BBD;
+}
+
+.container-about h1 {
+    padding: 0.7rem;
+    font-weight: 900;
+}
+.container-about p {
+    font-weight: 900;
+    padding: 2rem;
+    border: 0.3rem solid #197BBD;
 }
 
 /* Footer */
