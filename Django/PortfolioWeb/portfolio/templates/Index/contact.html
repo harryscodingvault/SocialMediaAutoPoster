@@ -7,7 +7,7 @@ Contacts
 {% block content %}
     <section class="contact-form py-5" >
         <div class="container py-5">
-            <div class="row height-30 align-items-center">
+            <div class="row">
                 <div class="col-md-8 mx-auto text-center">
                     <form class="form" method="post">
                         {% csrf_token %}
@@ -16,6 +16,7 @@ Contacts
                         <input type="text" class="form-control form-control-lg m-2" name="subject" placeholder="Enter Subject">
                         <textarea class="form-control form-control-lg m-2" name="message" placeholder="Enter Message"></textarea>
                         <button class="btn btn-lg text-capitalize">
+                            <i class="far fa-paper-plane"></i>
                             Submit
                         </button>
                     </form>

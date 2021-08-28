@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block content %}
-<div class="container container-intro text-center who-container">
+<div class="container container-intro text-center">
 		<h1 class="text-intro">{{ intro.title }}</h1>
-		<p class="text-intro-p">-{{ intro.description }}-</p>
+		<p class="text-intro">-{{ intro.description }}-</p>
 </div>
 
 
@@ -29,11 +29,13 @@
 					{% if project.image %}
 					<img src="{{ project.image.url }}" alt="" class="card-img-top" >
 					{% else %}
-							<div class="box-part text-center" style="background: red;"></div
+							<div class="box-part text-center" style="background: red;"></div>
 					{% endif %}
-					<h6 class="corner-text mb-0 px-3">{{ project.title }}</h6>
-					<h1 class="my-2 text-capitalize">{{ project.description }}</h1>
-					<p class="lead">Lorems aw ra raw rqwr waw5raw35 aw5wa53a</p>
+					<div class="text-container">
+						<h1 class="corner-text">{{ project.title }}</h1>
+						<p class="lead">{{ project.description }}</p>
+					</div>
+
 					<hr class="mb-0">
 					<div class="card-footer d-flex justify-content-between ">
 						<p class="proj-frm">Django</p>
@@ -70,11 +72,12 @@
 					{% if project.image %}
 					<img src="{{ project.image.url }}" alt="" class="card-img-top" >
 					{% else %}
-							<div class="box-part text-center" style="background: red;"></div
+							<div class="box-part text-center" style="background: red;"></div>
 					{% endif %}
-					<h6 class="corner-text mb-0 px-3">{{ project.title }}</h6>
-					<h1 class="my-2 text-capitalize">{{ project.description }}</h1>
-					<p class="lead">Lorems aw ra raw rqwr waw5raw35 aw5wa53a</p>
+					<div class="text-container">
+						<h1 class="corner-text">{{ project.title }}</h1>
+						<p class="lead">Lorems aw ra raw rqwr waw5raw35 aw5wa53a</p>
+					</div>
 					<hr class="mb-0">
 					<div class="card-footer d-flex justify-content-between ">
 						<p class="proj-frm">Django</p>
