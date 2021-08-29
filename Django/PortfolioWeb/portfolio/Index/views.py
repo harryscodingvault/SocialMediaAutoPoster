@@ -4,7 +4,7 @@ from .models import About, Intro, Projects, Skills
 def home(request):
     intro_date = Intro.objects.all()[0]
     projects_data = Projects.objects.all()
-    skills_data = Skills.objects.all
+    skills_data = Skills.objects.all()
 
     context = {
         'intro': intro_date,
@@ -15,7 +15,7 @@ def home(request):
 
 def about(request):
     about_data = About.objects.all()[0]
-    skills_data = Skills.objects.all
+    skills_data = Skills.objects.all()
 
     context = {
         'about': about_data,

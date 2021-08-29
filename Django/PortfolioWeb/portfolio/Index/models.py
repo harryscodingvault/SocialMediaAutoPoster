@@ -41,6 +41,8 @@ class Projects(models.Model):
     image = models.ImageField(upload_to='about/', blank=True)
     link = models.CharField(max_length=400, blank=False)
     is_big = models.BooleanField(blank=False)
+    tags = models.TextField(max_length=800, blank=False)
 
     def __str__(self):
         return self.title
+
