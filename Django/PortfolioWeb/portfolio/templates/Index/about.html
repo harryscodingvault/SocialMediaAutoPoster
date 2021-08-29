@@ -5,10 +5,10 @@ About
 {% endblock %}
 
 {% block content %}
-	<section class="about py-5 m-5 container-about">
+	<section class="about py-5 container-about">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 mx-auto text-center">
+				<div class="col-md-6  mx-auto text-center">
 					<h1>{{ about.title }}</h1>
 					<p>{{ about.description }}</p>
 				</div>
@@ -16,80 +16,63 @@ About
 		</div>
 	</section>
 
+	<section class="skills skills-about">
+		<div class="container container-separator text-center">
+            <h1 class="col-8 col-md-4 mx-auto text-uppercase title-proj-section-small">Stuff I know: </h1>
+    	</div>
 
-
-
-
-
-
-    <div class="container container-separator text-center">
-            <h1 class="text-separator">Stuff I know: </h1>
-    </div>
-
-    <div class="box">
-    <div class="container">
-     	<div class="row">
-
-			    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >
-                    <a href="{{ project.link }}">
-                        <div class="box-part text-center" style="background-image: url(/static/images/gears_pic.jpeg);">
-						<div class="text-box">
-						<div class="title">
-							<h1>Languages: </h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-sm-6 my-3">
+					<div class="card-skill text-center">
+						<div class="card-title pt-3">
+							<h2>Languages: </h2>
 						</div>
-						</div>
-						<div class="text-box">
-						<div class="text">
-                           {% for skill in skills %}
-                                <h4>{{ skill.language }}</h4>
-                            {% endfor %}
-						</div>
-						</div>
-
-					 </div>
-                    </a>
+						<ul class="list-group list-group-flush mt-5">
+						{% for skill in skills %}
+							{% if skill.language %}
+							<li class="list-group-item text-uppercase text-muted first-list">
+                                {{ skill.language }}
+							</li>
+							{% endif %}
+                       	{% endfor %}
+						</ul>
+					</div>
 				</div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >
-                    <a href="{{ project.link }}">
-                        <div class="box-part text-center" style="background-image: url(/static/images/gears_pic.jpeg);">
-						<div class="text-box">
-						<div class="title">
-							<h1>Frameworks: </h1>
+				<div class="col-lg-4 col-sm-6 my-3">
+					<div class="card-skill text-center">
+						<div class="card-title pt-3">
+							<h2>Frameworks: </h2>
 						</div>
-						</div>
-						<div class="text-box">
-						<div class="text">
-                           {% for skill in skills %}
-                                <h4>{{ skill.framework }}</h4>
-                            {% endfor %}
-						</div>
-						</div>
-
-					 </div>
-                    </a>
+						<ul class="list-group list-group-flush mt-5">
+						{% for skill in skills %}
+							{% if skill.framework %}
+							<li class="list-group-item text-uppercase text-muted first-list">
+                                {{ skill.framework }}
+							</li>
+							{% endif %}
+                       	{% endfor %}
+						</ul>
+					</div>
 				</div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >
-                    <a href="{{ project.link }}">
-                        <div class="box-part text-center" style="background-image: url(/static/images/gears_pic.jpeg);">
-						<div class="text-box">
-						<div class="title">
-							<h1>Technologies: </h1>
+				<div class="col-lg-4 col-sm-6 my-3">
+					<div class="card-skill text-center">
+						<div class="card-title pt-3">
+							<h2>Technologies: </h2>
 						</div>
-						</div>
-						<div class="text-box">
-						<div class="text">
-                           {% for skill in skills %}
-                                <h4>{{ skill.technology }}</h4>
-                            {% endfor %}
-						</div>
-						</div>
-
-					 </div>
-                    </a>
+						<ul class="list-group list-group-flush mt-5">
+						{% for skill in skills %}
+							{% if skill.technology %}
+							<li class="list-group-item text-uppercase text-muted first-list">
+                                {{ skill.technology }}
+							</li>
+							{% endif %}
+                       	{% endfor %}
+						</ul>
+					</div>
 				</div>
+			</div>
 		</div>
-    </div>
-
-</div>
+	</section>
 
 {% endblock %}
