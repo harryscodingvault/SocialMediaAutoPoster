@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
-from cart.models import CartItem
+from cart.models import CartItem, ServiceFee
 from store.models import Product
 from .models import Order, Payment, OrderProduct
 from .forms import OrderForm
@@ -11,6 +11,7 @@ from django.template.loader import render_to_string
 
 
 def payments(request):
+    my_fee = ServiceFee.objects.first()
     body = json.loads(request.body)
     order = Order.objects.get(user=request.user, is_ordered=False, order_number=body['orderID'])
 
@@ -71,19 +72,18 @@ def payments(request):
 
 def place_order(request, total=0, quantity=0):
     current_user = request.user
+    my_fee = ServiceFee.objects.first()
 
     cart_items = CartItem.objects.filter(user=current_user)
     cart_count = cart_items.count()
     if cart_count <= 0:
         return redirect('store')
 
-    grand_total = 0
-    tax = 0
     for cart_item in cart_items:
         total += (cart_item.product.price * cart_item.quantity)
         quantity += cart_item.quantity
     tax = (2 * total)/100
-    grand_total = total + tax
+    grand_total = total + tax + my_fee.mobile_fee
 
     if request.method == 'POST':
         form = OrderForm(request.POST)

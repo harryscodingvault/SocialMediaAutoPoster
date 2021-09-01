@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from store.models import Product
-from .models import Cart, CartItem
+from .models import Cart, CartItem, ServiceFee
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 
@@ -82,6 +82,7 @@ def remove_cart_item(request, product_id, cart_item_id):
 
 
 def cart(request, total=0, quantity=0, cart_items=None):
+    my_fee = ServiceFee.objects.first()
     try:
         tax = 0
         grand_total = 0
@@ -94,7 +95,7 @@ def cart(request, total=0, quantity=0, cart_items=None):
             total += (cart_item.product.price * cart_item.quantity)
             quantity += cart_item.quantity
         tax = (2 * total)/100
-        grand_total = total + tax
+        grand_total = total + tax + my_fee.mobile_fee
     except ObjectDoesNotExist:
         pass
 
@@ -104,12 +105,14 @@ def cart(request, total=0, quantity=0, cart_items=None):
         'cart_items': cart_items,
         'tax': tax,
         'grand_total': grand_total,
+        'my_fee': my_fee.mobile_fee,
     }
 
     return render(request, 'cart/cart.html', context=context)
 
 @login_required(login_url='login')
 def checkout(request, total=0, quantity=0, cart_items=None):
+    my_fee = ServiceFee.objects.first()
     try:
         tax = 0
         grand_total = 0
@@ -122,7 +125,7 @@ def checkout(request, total=0, quantity=0, cart_items=None):
             total += (cart_item.product.price * cart_item.quantity)
             quantity += cart_item.quantity
         tax = (2 * total)/100
-        grand_total = total + tax
+        grand_total = total + tax + my_fee.mobile_fee
     except ObjectDoesNotExist:
         pass
 
@@ -132,5 +135,6 @@ def checkout(request, total=0, quantity=0, cart_items=None):
         'cart_items': cart_items,
         'tax': tax,
         'grand_total': grand_total,
+        'my_fee': my_fee.mobile_fee,
     }
     return render(request, 'cart/checkout.html', context=context)

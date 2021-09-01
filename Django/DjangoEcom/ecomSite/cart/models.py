@@ -22,3 +22,10 @@ class CartItem(models.Model):
 
     def __str__(self):
         return self.product.product_name
+
+
+class ServiceFee(models.Model):
+    mobile_fee = models.IntegerField(max_length=50)
+
+    def __str__(self):
+        return str(self.mobile_fee)
