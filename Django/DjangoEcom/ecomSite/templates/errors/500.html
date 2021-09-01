@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}
+    505
+{% endblock %}
+
+
+{% block content %}
+    <section class="input-form py-5 my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mx-auto text-center">
+
+                    <h2 class="text-uppercase">You are not suppose to be here, please go back :( </h2>
+                        <a href="{% url 'home' %}">
+                            <button type="button" class="btn btn-yellow my-5">
+                             Go back
+                            </button>
+                        </a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+

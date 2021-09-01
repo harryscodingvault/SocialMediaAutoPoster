@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}
+    Order Detail
+{% endblock %}
+
+
+{% block content %}
+<section class="single-product py-5 mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-10 mx-auto col-lg-4 text-center my-5">
+                </div>
+                <div class="col-10 mx-auto col-lg-8 single-product-info m-5 px-lg-5">
+                    <h2 class="text-uppercase my-2">order : #{{ order.order_number }}</h2>
+                    <h4>User : {{ order.name }}</h4>
+                    <h4>Address : {{ order.address }}</h4>
+                    <h4>Total: {{ order.order_total }}</h4>
+                    <h4>Phone: {{ order.phone }}</h4>
+                    <h4>Created: {{ order.created_at }}</h4>
+                    <h4>Subtotal: ${{ subtotal }}</h4>
+                    <h4>Tax: ${{ order.tax }}</h4>
+                    <h4>Total: ${{ order.order_total }}</h4>
+                    <p class="lead text-muted">{{ selected_product.description }}</p>
+                   <a href="{% url 'my_orders' %}" class="btn btn-yellow m-5">Go back</a>
+                </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+

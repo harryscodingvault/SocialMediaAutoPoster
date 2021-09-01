@@ -1,0 +1,56 @@
+{% load static %}
+<header>
+    <nav class="navbar navbar-expand-lg navbar-expand-sm navbar-light">
+
+        <a href="{% url 'home' %}" class="navbar-brand mx-3">
+            <img class="" src="{% static 'images/car_icon.png'%}" alt="company logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+             <img src="{% static 'images/burger_icon.png'%}" alt="burger icon">
+        </button>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="navbar-nav mx-auto ">
+                <li class="nav-link mx-2">
+                    <a class="nav-link {% if '/store/' in request.path %}nav-active{% endif %}" href="{% url 'store'%}">All Products</a>
+                </li>
+                <li class="nav-link  mx-2">
+                    <a class="nav-link {% if '/accounts/' in request.path %} nav-active {% endif %}" href="{% url 'dashboard'%}">Dashboard</a>
+                </li>
+
+                <li class="nav-link  mx-2">
+                    <a class="nav-link {% if '/cart/' in request.path %} nav-active {% endif %}" href="{% url 'cart'%}">Cart: {{cart_count}}</a>
+                </li>
+                <li class="nav-link  mx-2">
+                    <a class="nav-link {% if '/contact/' in request.path %} nav-active {% endif %}" href="{% url 'contact'%}">Contact us</a>
+                </li>
+                <li class="nav-link  mx-2">
+                    <a class="nav-link {% if '/about/' in request.path %} nav-active {% endif %}" href="{% url 'about'%}">About</a>
+                </li>
+
+                {% if user.id is None %}
+                <li class="nav-link  mx-2">
+                    <a class="nav-link {% if '/login/' in request.path %} nav-active {% endif %}" href="{% url 'login'%}">Login</a>
+                </li>
+                <li class="nav-link  mx-2">
+                    <a class="nav-link {% if '/register/' in request.path %} nav-active {% endif %}" href="{% url 'register'%}">Register</a>
+                </li>
+                {% else %}
+                <li class="nav-link  mx-2">
+                    <a class="nav-link {% if '/logout/' in request.path %} nav-active {% endif %}" href="{% url 'logout'%}">Logout</a>
+                </li>
+                {% endif %}
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-icons d-none d-lg-flex  mx-3">
+            <a class="navbar-icon mx-2 navbar-cart-icon " href="{% url 'cart'%}">
+                <img src="{% static 'images/cart_plus.png'%}" alt="cart">
+                <div class="cart-items">
+                    {{cart_count}}
+                </div>
+
+            </a>
+        </div>
+
+    </nav>
+</header>
